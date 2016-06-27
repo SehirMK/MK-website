@@ -21,6 +21,7 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^$', 'newletter.views.home', name='home'),
     url(r'^contact/$', 'newletter.views.contact', name='contact'),
+    url(r'^about/$', 'mywebsite.views.about', name='about'),
     url(r'^admin/', admin.site.urls),
 ]
 
