@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+    <head>
+        <meta charset="utf-8">
+        <title>Home Page</title>
+        <style>
+        img {
+            position: absolute;
+            left: 38%;
+            top: 3%;
+            z-index: -1;
+        }
+        form {
+            position: absolute;
+            left: 42%;
+            top: 40%;
+            z-index: -1;
+            font-family: Helvetica;
+        }
+        </style>
+
+
+    </head>
+    <body>
+        <h1>this is index.html</h1>
+        <img src="{% static 'images/pic.jpg' %}" width="350" height="360" alt='Ohh, couldnt find the image'>
+
+        <div class="container">
+            <form method="POST">
+                {{ form.as_p }}
+                {% csrf_token %}
+                <input type="submit" class="btn btn-primary" value="Sign Up!">
+            </form>
+
+        </div>
+    </body>
+</html>
