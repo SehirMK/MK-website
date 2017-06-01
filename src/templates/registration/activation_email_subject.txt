@@ -1,1 +1,0 @@
-﻿{% load i18n %}{% trans "Account activision on %} Complete Registration for {{ site.name }}
