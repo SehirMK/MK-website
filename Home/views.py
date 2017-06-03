@@ -1,19 +1,21 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from django.http import HttpResponse
+#from django.http import HttpResponse
 from . import forms
+#from Home.models import User
+from Home.forms import FormName
 
 # Create your views here.
 
 def index(request):
-    form = forms.FormName()
+    form = FormName()
 
     if request.method == 'POST':
-        form = forms.FormName(request.POST)
+        form = FormName(request.POST)
 
         if form.is_valid():
-            print('Validation success!')
-            print('Name:' + form.cleaned_data['name'])
-            print('Email:' + form.cleaned_data['email'])
+            form.save(commit=True)
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
     return render(request, 'Home/index.html', {'form':form})
 

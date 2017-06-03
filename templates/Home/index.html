@@ -29,7 +29,7 @@
         <img src="{% static 'images/pic.jpg' %}" width="350" height="360" alt='Ohh, couldnt find the image'>
 
         <div class="container">
-            <form method="POST">
+            <form method="POST" action=.>
                 {{ form.as_p }}
                 {% csrf_token %}
                 <input type="submit" class="btn btn-primary" value="Sign Up!">

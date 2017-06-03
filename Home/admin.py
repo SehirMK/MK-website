@@ -1,7 +1,5 @@
 from django.contrib import admin
-from Home.models import Topic, People, AccessRecord
+from Home.models import User
 # Register your models here.
 
-admin.site.register(AccessRecord)
-admin.site.register(Topic)
-admin.site.register(People)
+admin.site.register(User)
